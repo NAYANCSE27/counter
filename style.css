@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    margin: 10% 15%;
+    background-color: #dfd8d8;
+}
+
+.value{
+    display: flex;
+}
+
+input{
+    padding: 3vh 5%;
+    font-weight: bold;
+    font-size: 27px;
+}
+
+button{
+    padding: 3vh 5%;
+    font-size: 27px;
+    font-weight: bold;
+    margin-left: 10%;
+    cursor: pointer;
+}
+
+h4{
+    margin-top: 5%;
+    font-size: 47px;
+    font-weight: bold;
+}
+
+p{
+    margin-top: 5%;
+    margin-left: 10%;
+    font-size: 20px;
+    font-weight: bold;
+}
