@@ -1,36 +1,44 @@
-"use strict";
+const items = [];
 
-const itemTexts = [];
 
-function getInput() {
-  return document.getElementById("input-box").value;
+function isValid(text){
+    return Boolean(text);
 }
 
-function createELement(text) {
-  const item = document.createElement("h2");
-  item.innerText = text;
-  return item;
+
+function doesContains(text) {
+    return items.includes(text);
 }
 
-function doesExist(text) {
-  return itemTexts.includes(text);
+
+function showOutput(text){
+    const list = document.getElementById("list__show");
+    list.append(text);
 }
 
-function addItem() {
-  const inputText = getInput();
 
-  if (inputText === "") {
-    alert("Empty string!!!");
-    return;
-  }
+function userInput(){
+    const user__value = document.getElementById("user__input").value;
+   
+    document.getElementById("user__input").value = "";
 
-  if (doesExist(inputText)) {
-    alert("Duplicate!!!!");
-    return;
-  }
 
-  itemTexts.push(inputText);
-  const item = createELement(inputText);
-  const targetElement = document.getElementById("list");
-  targetElement.appendChild(item);
+    if(!isValid(user__value)){
+        window.alert("invalid input");
+        return;
+    }
+
+
+    if(doesContains(user__value)){
+        window.alert(`${user__value} already exist`);
+        return;
+    }
+
+
+    items.push(user__value);
+    let lii = document.createElement("h2");
+    lii.innerText = user__value;
+
+
+    showOutput(lii);
 }
