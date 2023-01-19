@@ -5,18 +5,15 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <title>Grade Calculator</title>
+  <title>Build List</title>
 </head>
 
 <body>
-  <div class="value">
-    <input id="marks-inp" type="number" />
-    <button onclick="calculateGrade()">Calculate</button>
-  </div>
   <div>
-    <h4>Grade:</h4>
-    <p id="grade"></p>
+    <input id="input-box" type="text" />
+    <button id="add-btn" onclick="addItem()">Add</button>
+  </div>
+  <div id="list">
   </div>
   <script src="./script.js"></script>
 </body>

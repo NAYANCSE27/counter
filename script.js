@@ -1,27 +1,36 @@
-function setInitialValue() {
-  document.getElementById("marks-inp").value = 0;
+"use strict";
+
+const itemTexts = [];
+
+function getInput() {
+  return document.getElementById("input-box").value;
 }
 
-function calculateGrade() {
-  const marks = parseInt(document.getElementById("marks-inp").value);
-  
-  if (marks >= 80 && marks <= 100) {
-    document.getElementById("grade").innerText = "You got A+";
-  }else if (marks >= 70 && marks <= 79) {
-    document.getElementById("grade").innerText = "You got A";
-  }else if (marks >= 60 && marks <= 69) {
-    document.getElementById("grade").innerText = "You got A-";
-  }else if (marks >= 50 && marks <= 59) {
-    document.getElementById("grade").innerText = "You got B";
-  }else if (marks >= 40 && marks <= 49) {
-    document.getElementById("grade").innerText = "You got C";
-  }else if (marks >= 33 && marks <= 39) {
-    document.getElementById("grade").innerText = "You got D";
-  }else if (marks >= 0 && marks <= 32) {
-    document.getElementById("grade").innerText = "You won't pass with this marks.";
-  }else{
-    document.getElementById("grade").innerText =  "Invalid marks."
+function createELement(text) {
+  const item = document.createElement("h2");
+  item.innerText = text;
+  return item;
+}
+
+function doesExist(text) {
+  return itemTexts.includes(text);
+}
+
+function addItem() {
+  const inputText = getInput();
+
+  if (inputText === "") {
+    alert("Empty string!!!");
+    return;
   }
-}
 
-setInitialValue();
+  if (doesExist(inputText)) {
+    alert("Duplicate!!!!");
+    return;
+  }
+
+  itemTexts.push(inputText);
+  const item = createELement(inputText);
+  const targetElement = document.getElementById("list");
+  targetElement.appendChild(item);
+}
